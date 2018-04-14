@@ -1,11 +1,12 @@
-const express = require('express')
+const express = require('express');
+const app = express();
+const cors = require('cors')();
 
-const app=express();
-const cors= require('cors')();
-app.use(cors)
+app.use(cors);
+
 app.listen(4000);
 
-const company={
+const company = {
 count: 13,
 company: [
 {
@@ -126,10 +127,8 @@ favorite: 1,
 type: "백엔드개발자"
 }
 ]
-};
+}
 
 app.get('/company',function(req,res){
-    
-    
-    res.json(company); 
+    res.json(company);
 });
